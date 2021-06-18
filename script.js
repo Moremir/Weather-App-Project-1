@@ -23,6 +23,11 @@ let weather = {
     document.querySelector(".temp").innerText = temp + "°C";
     document.querySelector(".humidity").innerText = "Humidity: " + humidity + "%";
     document.querySelector(".wind").innerText = "Wind Speed: " + speed + "km/h";
+    localStorage.setItem("temp", temp.toString());
+    console.log(localStorage.getItem("temp"));
+    localStorage.setItem("name", name.toString());
+    console.log(localStorage.getItem("name"));
+    
   },
   search: function() {
       this.fetchWeather(document.querySelector('.search-bar').value);
@@ -42,3 +47,4 @@ document.querySelector(".search-bar").addEventListener("keyup", (event) => {
 })
 
 weather.fetchWeather('Rome');
+
